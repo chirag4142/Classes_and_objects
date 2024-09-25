@@ -1,27 +1,20 @@
-# Classes_and_Objects
-Experiment 11
-## Contents
-- [Aim](#aim)
-- [Software Used](#software-used)
-- [Theory](#theory)
-  * [Definition](#definition)
-  * [Class](#what-is-a-class)
-  * [Object](#what-is-an-object)
-  * [OOP Principles](principles-of-oop-in-c++)
-- [Algorithms](#algorithms)
-- [Conclusion](#conclusion)
-## Aim 
-To study Class and Objects
+# Classes-and-Objects-CPP
 
-## Software Used 
+## Experiment 11
+
+## Aim
+To learn about classes and objects.
+
+## Software Used
 VS Code
 
 ## Theory
 ### Definition
-Object-Oriented Programming (OOP) is a programming principle centered around the concept of "objects."
+Object-Oriented Programming (OOP) is a programming paradigm that focuses on "objects."
+
 #### What is a Class?
-Class is basically a framework or blueprint which we use to create objects. It encapsulates data and functions that operate on the data. Objects share similarities to its class. For eg children and thier parents where children could be considered objects of the parent class.
-> For example:
+A class is a blueprint for creating objects. It encapsulates data and functions that operate on that data. For example, consider a class called `Dog`:
+
 ```cpp
 #include <iostream>
 using namespace std;
@@ -35,17 +28,18 @@ public:
         cout << name << " Woof!" << endl;
     }
 };
-
 ```
-#### What is an Object?
-An object is basically an instance of a class. It is a self-contained unit that contains both data and methods. The data (attributes) represents the state of the object, while the methods (functions) define its behavior. For eg, in a class Car, an object could be a specific car with features like color and model, and operations like starting engine, driving.
-<br>
-An Object has two defining features:
-1. **Attributes:** These are the properties of an object. They represent the characteristics of the object. For eg, if you have a Car object, its attributes might include color, model, year etc. Attributes define what the object knows about itself.
 
-2. **Methods:** These are the functions or behaviors that an object can perform. They define what the object can do or what operations can be performed on it. For the Car object, methods might include start_engine(), drive(), and apply_brakes(). Methods define what actions the object can take or how it can interact with other objects.
-> For Example: Creating an object of class Dog:
-```cpp  
+#### What is an Object?
+An object is an instance of a class. It contains both data (attributes) and methods (functions). For instance, a specific car object might have attributes like color and model and methods like starting the engine or driving.
+
+An object has two main features:
+1. **Attributes:** Characteristics of the object, such as color or model for a car.
+2. **Methods:** Actions the object can perform, like `start_engine()` or `drive()`.
+
+For example, creating an object of the `Dog` class:
+
+```cpp
 int main() {
     Dog myDog;
     myDog.name = "Buddy";
@@ -55,96 +49,72 @@ int main() {
 
     return 0;
 }
-
 ```
 
 ### Principles of OOP in C++
 
 #### 1. Encapsulation
--  Encapsulation is the concept of bundling data and methods that operate on that data within a single unit, typically a class. It hides the internal state of the object from the outside world and only exposes a controlled interface.
-- **Example**: In C++, encapsulation is achieved using classes. Data members (attributes) are kept private or protected, and access to these members is provided through public methods (getters and setters).
-
+Encapsulation bundles data and methods within a class, hiding the object's internal state and exposing a controlled interface. In C++, this is often achieved by using private or protected data members and public methods (getters and setters).
 
 #### 2. Inheritance
--  Inheritance allows a class (derived class) to inherit properties and behaviors (methods) from another class (base class). This promotes code reusability and establishes a hierarchy between classes.
+Inheritance allows a derived class to inherit properties and methods from a base class, promoting code reusability. For example:
 
-    ```cpp
-    class Animal {
-    public:
-        void eat() { std::cout << "Eating..." << std::endl; }
-    };
+```cpp
+class Animal {
+public:
+    void eat() { std::cout << "Eating..." << std::endl; }
+};
 
-    class Dog : public Animal {
-    public:
-        void bark() { std::cout << "Barking..." << std::endl; }
-    };
-    ```
+class Dog : public Animal {
+public:
+    void bark() { std::cout << "Barking..." << std::endl; }
+};
+```
 
 #### 3. Polymorphism
--  Polymorphism allows objects of different classes to be treated as objects of a common base class. The most common use of polymorphism is to call methods on objects of derived classes through base class pointers or references, enabling dynamic method binding.
-
+Polymorphism enables objects of different classes to be treated as objects of a common base class. This allows methods of derived classes to be called through base class pointers or references.
 
 #### 4. Abstraction
-- Abstraction focuses on hiding the complex implementation details and showing only the necessary features of an object. It simplifies interactions with objects by exposing only the relevant methods and properties.
-
-
+Abstraction hides complex implementation details and shows only essential features of an object, simplifying interactions.
 
 ## Algorithms
-### Define method inside class
-
+### Define Method Inside Class
 1. **Start**
-
 2. **Define the `Student` Class**
    - **Public Section**
-     - **Define the `myMethod` Function**
-       - Print"I am studying in 2nd year"
+     - Define the `myMethod` function to print "I am studying in 2nd year."
 3. **Main Function**
    - Create an object `s1` of type `Student`.
-   - Call the `myMethod` function on the `s1` object.
-
+   - Call `myMethod` on `s1`.
 4. **End**
 
-### Define method outside class
+### Define Method Outside Class
 1. **Start**
-
 2. **Define the `Student` Class**
    - **Public Section**
-     - **Declare the `myMethod` Function**
-       - The function will be defined outside the class.
-
-3. **Define the `myMethod` Function Outside the Class**
-   - **Specify that this function belongs to the `Student` class**
-   - Print the message "A Sophomore in SIT" to the console.
-
+     - Declare the `myMethod` function.
+3. **Define `myMethod` Outside the Class**
+   - Print "A Sophomore in SIT."
 4. **Main Function**
    - Create an object `s1` of type `Student`.
-   - Call the `myMethod` function on the `s1` object.
-
+   - Call `myMethod` on `s1`.
 5. **End**
 
-### Cuboid Volume
+### Cuboid Volume Calculation
 1. **Start**
-
-2. **Define `Cubiod` Class**
+2. **Define `Cuboid` Class**
    - **Public Section**
-     - **Data Members**
-       - `int length, breadth, height, volume;`
-     - **Member Functions**
-       - **`input()` Function**
-         - Prompt the user to enter the length, breadth, and height of the cuboid.
-         - Read the values and store them in t `length`, `breadth`, and `height` variables.
-       - **`Volume()` Function**
-         - Calculate the volume of the cuboid using the formula: `volume = length * breadth * height`.
-       - **`Output()` Function**
-         - Print : "The volume of the given Cuboid is : <volume>".
-
+     - Data members: `int length, breadth, height, volume;`
+     - Member functions:
+       - `input()`: Get dimensions from the user.
+       - `Volume()`: Calculate volume using `volume = length * breadth * height`.
+       - `Output()`: Print the volume.
 3. **Main Function**
-   - Create an object `v1` of type `Cubiod`.
-   - Call the `input()` function for `v1` to get the dimensions from the user.
-   - Call the `Volume()` function for `v1` to calculate the volume.
-   - Call the `Output()` function for`v1` to display the volume.
-
+   - Create an object `v1` of type `Cuboid`.
+   - Call `input()` for `v1`.
+   - Call `Volume()` for `v1`.
+   - Call `Output()` for `v1`.
 4. **End**
 
 ## Conclusion
-We learnt to use the concepts of Class and Objects.
+We explored the concepts of classes and objects in OOP.
